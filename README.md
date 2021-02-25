@@ -17,7 +17,7 @@ When attempting to start, you'll want to have git installed on your PC.
 
 On Windows, Mac, and Linux you can head to the install page "https://git-scm.com/downloads".
 
-You can also add git after install yarn with `yarn add git`.
+You can also add git after installing yarn with `yarn add git`.
 
 ## Git Usage
 
@@ -36,6 +36,8 @@ If you make changes to a file and want to confirm the changes locally, use
 To set up a commit to publish, use:
 
 `git commit -m "message explaining what you changed"`.
+
+Avoid `git commit` without the `-m` as it will open a multiline message editor in your terminal.
 
 To then publish the above commit to the remote repository (upload to GitHub), use:
 
