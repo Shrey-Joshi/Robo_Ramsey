@@ -1,6 +1,6 @@
 # Robo Ramsay Setup
 
-For code editor, I suggest everyone on the team use a lightweight one, like VS Code.
+For a code editor/IDE, I suggest everyone on the team use a lightweight one, like VS Code.
 
 For anyone new to git, below is a short git tutorial explaining what common commands you'll be using. 
 NOTE: This part of the read me is to help people with the git, the README contents will change once more of the project is complete.
