@@ -69,11 +69,17 @@ Git normally informs you of this when a `git pull` or `git commit` is performed.
 
 In git, all code for the final project is part of the `master` branch. You can create your own branch if you plan to make a series of commits for one aspect of the project. Use
 
-`git branch branchname`, where `branchname` is the name of the branch you are creating. 
+`git branch <branchname>`, where `branchname` is the name of the branch you are creating.
 
-Any commits you make will only change `branchname` and not `master`. Once all development on `branchname` is done, you can merge it back into the `master` branch using:
+To enter a branch, use `git checkout <branchname>`, you can also simultaneously create and enter a branch with `git checkout -b <branchname>`.
+
+Any commits/pushes you make will only change `branchname` and not `master`. Once all development on `branchname` is done, you can merge it back into the `master` branch using:
 
 `git merge branchname`. This step may require merge conflicts to be resolved if they exist.
+
+You could also just reenter the `master` branch using `git checkout master`. This avoids a merger.
+
+REMEMBER: `checkout` moves you from one branch to another, `merge` closes one branch and combines code between the two branches.
 
 Below is a representation of a merge:
 
