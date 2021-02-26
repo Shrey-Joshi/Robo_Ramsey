@@ -55,7 +55,7 @@ So in summary, everytime changes are made, add them to be committed with a messa
 
 You can also push to a specific branch using:
 
-`git push -u <branch> <name>`
+`git push -u origin <branchname>`, the term `origin` is shorthand for the cloned repository, which in this case would be `Dpmon1/Robo_Ramsey`.
 
 ## Git Workflow
 
