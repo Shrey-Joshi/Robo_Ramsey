@@ -20,6 +20,13 @@ On Windows, Mac, and Linux you can head to the install page "https://git-scm.com
 
 You can also add git after installing yarn with `yarn add git`.
 
+After you have git setup, it would be good to set your global login credentials for the remote repository we are using. In this case we are using GitHub, so simply put in your associated GitHub user name and email below:
+
+```
+git config -g user.name "username"
+git config -g user.email "username@emailprovider.com"
+```
+
 ## Git Usage
 
 When first downloading this project, move into a directory where you are comfortable with installing files to. Then run:
@@ -46,11 +53,15 @@ To then publish the above commit to the remote repository (upload to GitHub), us
 
 So in summary, everytime changes are made, add them to be committed with a message explaining what you did, and then push the commit.
 
+You can also push to a specific branch using:
+
+`git push -u <branch> <name>`
+
 ## Git Workflow
 
 Other people will also be uploading their own versions of the code to the repository as well. Use:
 
-`git pull` to update all files locally with changes made in the repository.
+`git pull` to update all files locally with changes made in the repository (default is master branch).
 
 Sometimes code others wrote will contradict code you've written, this is known as a merge conflict.
 
