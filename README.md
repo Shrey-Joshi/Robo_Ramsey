@@ -2,25 +2,61 @@
 
 > NOTE: This part of the README is to help people with the git, the README contents will change once more of the project is complete.
 
-For a code editor/IDE, I suggest everyone on the team use a lightweight one, like VS Code.
+For a code editor/IDE, I suggest everyone on the team use a lightweight one, like VS Code, you can download it here https://code.visualstudio.com/.
 
-For anyone new to git, below is a short git tutorial explaining what common commands you'll be using. 
+## WSL Setup (Not Necessary for Linux and Mac Users)
+
+For anyone using a **Windows OS**, you will need to install a linux distribution so we can utilize docker container in the future. Below are instructions for setting up a linux kernel using Windows Subsystem for Linux (WSL).
+
+First, enable WSL by searching for **Turn Windows features on or off** in your Windows Search bar, and select the link to the Control Panel. A tab should open up. Scroll to the bottom and check the folder **Windows Subsystem for Linux**, then press OK. Restart your computer if asked.
+
+After that open up **Microsoft Store**, and search for and install **Ubuntu 20.04 LTS**. After its installed, open up **Ubuntu 20.04 LTS** from your Windows Search bar. A terminal should open up, intially setting up Ubuntu. After setup is done, the shell should request for a password to set for root (I suggest putting your Windows admin/account password).
+
+🎉 Congratulations 🎉, you now have Linux on your system!
+
+### Link VS Code to WSL
+
+To open up directories in WSL in VS Code, you can download an extension. Simply go to the extensions tab (CTRL+SHIFT+X) in VS Code and search for **Remote - WSL** and install.
+
+When in Ubuntu, you can open your current directory as a VS code workspace with the command `code .`.
 
 ## Git Setup
 
-I also suggest having some kind of package manager on your system. Since we are using nodejs, `npm` can be installed along with it. Head over to "https://nodejs.org/en/download/" to install the LTS version for your specific system.
+On WSL and Linux, you can install npm and node with.
+
+```
+apt-get install npm
+```
+
+On Mac, you'll need to install Homebrew first, since Mac's don't come with a default package manager. Paste the command below and run in terminal.
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Update the available packages and then install node/npm.
+
+```
+brew update
+brew install node
+```
+
+Check if Node and NPM are installed by checking the version numbers:
+
+```
+node -v
+npm -v
+```
 
 In addition to `npm`, you can install the `yarn` package manager as its typically faster and supports many packages as well.
 
-Run `npm install -g yarn`.
+Run `npm install -g yarn` AFTER installing NPM.
 
-When attempting to start, you'll want to have git installed on your PC. 
+Linux comes with git by default, but for Mac you may need to install it unless you already have XCode on your system.
 
-On Windows, Mac, and Linux you can head to the install page "https://git-scm.com/downloads".
+If you need to install/update git, you can do so after installing yarn with `yarn add git`.
 
-You can also add git after installing yarn with `yarn add git`.
-
-After you have git setup, it would be good to set your global login credentials for the remote repository we are using. In this case we are using GitHub, so simply put in your associated GitHub user name and email below:
+After you have git setup, it would be good to set your global login credentials for the remote repository we are using. In this case we are using GitHub, so simply put in your associated GitHub user name and email (so you don't need to login all the time when using git) in the commands below:
 
 ```
 git config -g user.name "username"
@@ -33,7 +69,7 @@ When first downloading this project, move into a directory where you are comfort
 
 `git clone https://github.com/Dpmon1/Robo_Ramsey.git`
 
-All files from the repository should be copied into your working directory.
+All files from the repository should be copied into your current working directory, under the folder `Robo_Ramsey`.
 
 From here on you can edit files like normal.
 
