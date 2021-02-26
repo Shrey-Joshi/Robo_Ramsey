@@ -4,7 +4,7 @@
 
 For a code editor/IDE, I suggest everyone on the team use a lightweight one, like VS Code, you can download it here https://code.visualstudio.com/.
 
-## WSL Setup (Not Necessary for Linux and Mac Users)
+## 💻 WSL Setup (Not Necessary for Linux and Mac Users)
 
 For anyone using a **Windows OS**, you will need to install a linux distribution so we can utilize docker container in the future. Below are instructions for setting up a linux kernel using Windows Subsystem for Linux (WSL).
 
@@ -20,7 +20,7 @@ To open up directories in WSL in VS Code, you can download an extension. Simply 
 
 When in Ubuntu, you can open your current directory as a VS code workspace with the command `code .`.
 
-## Git Setup
+## 🛠 Git Setup
 
 On WSL and Linux, you can install npm and node with.
 
