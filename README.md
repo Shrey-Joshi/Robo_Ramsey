@@ -22,10 +22,17 @@ When in Ubuntu, you can open your current directory as a VS code workspace with 
 
 ## 🛠 Git Setup
 
-On WSL and Linux, you can install npm and node with.
+Update your WSL/Linux repositories using:
 
 ```
-apt-get install npm
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+On WSL and Linux, you can install npm and node with (add sudo in front if there is an error).
+
+```
+sudo apt-get install npm
 ```
 
 On Mac, you'll need to install Homebrew first, since Mac's don't come with a default package manager. Paste the command below and run in terminal.
