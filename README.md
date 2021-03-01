@@ -31,7 +31,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-On WSL and Linux, you can install npm and node with (add sudo in front if there is an error).
+On WSL and Linux, you can install npm and node with:
 
 ```
 sudo apt-get install npm
