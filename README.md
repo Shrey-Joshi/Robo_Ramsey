@@ -6,11 +6,11 @@ For a code editor/IDE, I suggest everyone on the team use a lightweight one, lik
 
 ## 💻 WSL Setup (Not Necessary for Linux and Mac Users)
 
-For anyone using a **Windows OS**, you will need to install a linux distribution so we can utilize docker container in the future. Below are instructions for setting up a linux kernel using Windows Subsystem for Linux (WSL).
+For anyone using a **Windows OS**, you will need to install a linux distribution so we can utilize docker containers in the future. Below are instructions for setting up a linux kernel using Windows Subsystem for Linux (WSL).
 
 First, enable WSL by searching for **Turn Windows features on or off** in your Windows Search bar, and select the link to the Control Panel. A tab should open up. Scroll to the bottom and check the folder **Windows Subsystem for Linux**, then press OK. Restart your computer if asked.
 
-After that open up **Microsoft Store**, and search for and install **Ubuntu 20.04 LTS**. After its installed, open up **Ubuntu 20.04 LTS** from your Windows Search bar. A terminal should open up, intially setting up Ubuntu. After setup is done, the shell should request for a password to set for root (I suggest putting your Windows admin/account password).
+After that open up **Microsoft Store**, and search for and install **Ubuntu 20.04 LTS**. After it's installed, open up **Ubuntu 20.04 LTS** from your Windows Search bar. A terminal should open up, intially setting up Ubuntu. After setup is done, the shell should request for a password to set for root (I suggest putting your Windows admin/account password).
 
 🎉 Congratulations 🎉, you now have Linux on your system!
 
@@ -45,7 +45,7 @@ On Mac, you'll need to install Homebrew first, since Macs don't come with a defa
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Once Homebrew Update the available packages and then install node/npm.
+Update Homebrew's available packages and install node/npm by running the commands below.
 
 ```
 brew update
@@ -61,7 +61,7 @@ node -v
 npm -v
 ```
 
-In addition to `npm`, you can install the `yarn` package manager as its typically faster and supports many packages as well.
+In addition to `npm`, you can install the `yarn` package manager as it's typically faster and supports many packages as well.
 
 Run `npm install -g yarn` AFTER installing NPM.
 
@@ -78,7 +78,7 @@ git config -g user.email "username@emailprovider.com"
 
 ## Git Usage
 
-When first downloading this project, move into a directory where you are comfortable with installing files to. Then run:
+When first downloading this project, move into a directory where you are comfortable with downloading files to. Then run:
 
 `git clone https://github.com/Dpmon1/Robo_Ramsey.git`
 
