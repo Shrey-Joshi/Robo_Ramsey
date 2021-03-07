@@ -173,7 +173,7 @@ Once all development on `branchname` is done, you can merge it back into the `ma
 ```
 git checkout main
 git merge branchname
-```. 
+```
 
 This step may require merge conflicts to be resolved if they exist.
 
