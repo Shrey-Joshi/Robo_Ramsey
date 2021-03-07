@@ -98,7 +98,7 @@ Avoid `git commit` without the `-m` as it will open a multiline message editor i
 
 To then publish the above commit to the remote repository (upload to GitHub), use:
 
-`git push`
+`git push origin`
 
 So in summary, everytime changes are made, add them to be committed with a message explaining what you did, and then push the commit.
 
@@ -106,11 +106,49 @@ You can also push to a specific branch using:
 
 `git push -u origin <branchname>`, the term `origin` is shorthand for the cloned repository, which in this case would be `Dpmon1/Robo_Ramsey`.
 
+## Git Submodules (Repo inside Repo)
+
+Since we are using Expo as a React Native wrapper, I already initialized the ui portion of the project and added it as a submodule on my end. From your end, the folder will be empty.
+
+To fill it you must run the command:
+
+```
+git submodule update --init --recursive
+```
+
+When you update your local repository with the remote one using `git pull`, remember to use the following commands after:
+
+```
+$ git submodule sync --recursive
+$ git submodule update --init --recursive
+```
+
+If you ever plan to add a submodule yourself use the following for a remote repo:
+
+```
+git submodule add <github url>
+```
+
+Or the following for a local repo:
+
+```
+git submodule add `pwd`/<dir name>
+```
+
+Then do a `git commit -am "<commit message>"`, and finally a `git push origin` to save it to the project repo.
+
+
 ## Git Workflow
 
-Other people will also be uploading their own versions of the code to the repository as well. Use:
+Other people will also be uploading their own versions of the code to the repository as well.
 
-`git pull` to update all files locally with changes made in the repository (default is master branch).
+To see updates in a current branch use:
+
+```
+git fetch origin
+```
+
+Use `git pull` to update all files locally with changes made in the repository (default is master branch).
 
 Sometimes code others wrote will contradict code you've written, this is known as a merge conflict.
 
@@ -122,11 +160,24 @@ In git, all code for the final project is part of the `master` branch. You can c
 
 To enter a branch, use `git checkout <branchname>`, you can also simultaneously create and enter a branch with `git checkout -b <branchname>`.
 
-Any commits/pushes you make will only change `branchname` and not `master`. Once all development on `branchname` is done, you can merge it back into the `master` branch using:
+Any commits/pushes you make will only change `branchname` and not `master`. 
 
-`git merge branchname`. This step may require merge conflicts to be resolved if they exist.
+If you are part of the UI team, working on the Expo submodule in a branch may require you to update the submodule from said branch, which can be done with:
 
-You could also just reenter the `master` branch using `git checkout master`. This avoids a merger.
+```
+git submodule update --remote --merge
+```
+
+Once all development on `branchname` is done, you can merge it back into the `main` branch using:
+
+```
+git checkout main
+git merge branchname
+```. 
+
+This step may require merge conflicts to be resolved if they exist.
+
+You could also just reenter the `main` branch using `git checkout main`. This avoids a merger.
 
 REMEMBER: `checkout` moves you from one branch to another, `merge` closes one branch and combines code between the two branches.
 
@@ -135,5 +186,5 @@ Below is a representation of a merge:
 ```
      A---B---C branchname
     /         \
-D---E---F---G---H---I master
+D---E---F---G---H---I main
 ```
