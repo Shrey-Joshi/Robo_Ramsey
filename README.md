@@ -116,6 +116,16 @@ To fill it you must run the command:
 git submodule update --init --recursive
 ```
 
+Then run the command below to install Expo to your local machine, so you can run the above application.
+
+```
+yarn add expo
+```
+
+After installing Expo, run `expo start` to start the project.
+
+#### Maintaining a Submodule
+
 When you update your local repository with the remote one using `git pull`, remember to use the following commands after:
 
 ```
