@@ -116,9 +116,10 @@ To fill it you must run the command:
 git submodule update --init --recursive
 ```
 
-Then run the command below to install Expo to your local machine, so you can run the above application.
+Then run the command below to in the `roboramsey_ui` folder to install Expo to your local machine, so you can run the above application.
 
 ```
+cd roboramsey_ui
 yarn add expo
 ```
 
