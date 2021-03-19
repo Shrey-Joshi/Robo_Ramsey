@@ -21,6 +21,25 @@ class Item
     {
         this.itemIngredients.splice(this.itemIngredients.indexOf(ingredient),1);
     }
+    editItem(json)
+    {
+        if(json.itemName)
+        {
+            this.itemName = json.itemName;
+        }
+        if(json.itemDescription)
+        {
+            this.itemDescription = json.itemDescription;
+        }
+        if(json.itemPrice)
+        {
+            this.itemPrice = json.itemPrice;
+        }
+        if(json.itemPrepTime)
+        {
+            this.itemPrepTime = json.itemPrepTime;
+        }
+    }
 }
 function addItem(name, desc, price, prepTime, images, ingredients, avail, popu)
 {
@@ -29,23 +48,4 @@ function addItem(name, desc, price, prepTime, images, ingredients, avail, popu)
 function deleteItem(item)
 {
     item.itemDeleted = true;
-}
-function editItem(toEdit,json)
-{
-    if(json.itemName)
-    {
-      toEdit.itemName = json.itemName;
-    }
-    if(json.itemDescription)
-    {
-      toEdit.itemDescription = json.itemDescription;
-    }
-    if(json.itemPrice)
-    {
-      toEdit.itemPrice = json.itemPrice;
-    }
-    if(json.itemPrepTime)
-    {
-      toEdit.itemPrepTime = json.itemPrepTime;
-    }
 }
