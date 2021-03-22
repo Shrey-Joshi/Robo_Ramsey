@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo",
     "watch": "babel-watch -L src/index.js",
     "start": "node index.js",
     "dev": "npx nodemon server.js"
@@ -12,9 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.9.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
+    "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.5.1"
   },
   "devDependencies": {

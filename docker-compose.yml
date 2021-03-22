@@ -5,14 +5,16 @@ services:
     depends_on:
       - accounts-db
     environment:
-      - DB_URI=mysql://root:password@accounts-db/db?charset=UTF8
+      - DB_URI="mysql://root:password@accounts-db/db?charset=UTF8"
+    ports:
+      - 7100:7100
     volumes:
-      - ./accounts:/app
+      - ./accounts:/opt/app
 
   accounts-db:
-    image: "mysql:latest"
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=db
+    image: "mysql:latest"
     ports:
       - 0.0.0.0:7200:3306

@@ -1,8 +1,8 @@
 FROM node:14
 
-WORKDIR /app
+WORKDIR /opt/app
 
-COPY . ./
+COPY . /opt/app
 
 RUN yarn install
 
