@@ -125,30 +125,6 @@ yarn add expo
 
 After installing Expo, run `expo start` to start the project.
 
-#### Maintaining a Submodule
-
-When you update your local repository with the remote one using `git pull`, remember to use the following commands after:
-
-```
-$ git submodule sync --recursive
-$ git submodule update --init --recursive
-```
-
-If you ever plan to add a submodule yourself use the following for a remote repo:
-
-```
-git submodule add <github url>
-```
-
-Or the following for a local repo:
-
-```
-git submodule add `pwd`/<dir name>
-```
-
-Then do a `git commit -am "<commit message>"`, and finally a `git push origin` to save it to the project repo.
-
-
 ## Git Workflow
 
 Other people will also be uploading their own versions of the code to the repository as well.
@@ -156,14 +132,25 @@ Other people will also be uploading their own versions of the code to the reposi
 To see updates in a current branch use:
 
 ```
-git fetch origin
+git fetch origin main
 ```
 
-Use `git pull` to update all files locally with changes made in the repository (default is master branch).
+Use `git pull origin main` to update all files locally with changes made in the repository (default is `main` branch).
 
 Sometimes code others wrote will contradict code you've written, this is known as a merge conflict.
 
 Git normally informs you of this when a `git pull` or `git commit` is performed. You can resolve these manually on your end, or create a branch so two versions can exist and one can be merged later.
+
+To resolve a merge do:
+```
+git checkout -b test
+git checkout main
+git pull origin main
+git add .
+git commit -m "Message"
+git push origin main
+git branch -d test
+```
 
 In git, all code for the final project is part of the `master` branch. You can create your own branch if you plan to make a series of commits for one aspect of the project. Use
 
