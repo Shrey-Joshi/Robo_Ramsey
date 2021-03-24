@@ -1,51 +1,104 @@
 class Item
 {
-    constructor(name, description = "", price, prepTime = undefined, images = undefined, ingredients = undefined, avail = false, popu = false)
+    constructor(itemName, itemDescription = "", itemPrice, itemPrepTime = undefined, itemImages = undefined, itemIngredients = undefined, itemAvailability = false, itemPopularity = false)
     {
         //this.itemID = 
-        this.itemName = name;
-        this.itemDescription = description;
-        this.itemPrice = price;
-        this.itemPrepTime = prepTime;
-        this.itemImages = images;
-        this.itemIngredients = ingredients;
-        this.itemAvailability = avail;
-        this.itemPopularity = popu;
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
+        this.itemPrice = itemPrice;
+        this.itemPrepTime = itemPrepTime;
+        this.itemImages = itemImages;
+        this.itemIngredients = itemIngredients;
+        this.itemAvailability = itemAvailability;
+        this.itemPopularity = itemPopularity;
         this.itemDeleted = false;
     }
-    addIngredient(ingredient)
+
+	setItemAvailablility(itemAvailability)
+	{
+		this.itemAvailability = itemAvailability;
+	}
+
+	setItemPopularity(itemPopularity)
+	{
+		this.itemPopularity = itemPopularity;
+	}
+	
+    addItemIngredient(ingredient)
     {
         this.itemIngredients.push(ingredient);
     }
-    delIngredient(ingredient)
+
+    deleteItemIngredient(ingredient)
     {
         this.itemIngredients.splice(this.itemIngredients.indexOf(ingredient),1);
     }
-    editItem(json)
+
+	addItemImage(addedImage)
     {
-        if(json.itemName)
+        this.itemImages.push(addedImage);
+    }
+
+	deleteItemImage(deletedImage)
+	{
+		this.itemImages.splice(this.itemImages.indexOf(deletedImage),1);
+		// TODO figure out if this works
+	}
+
+	deleteItem(item)
+	{
+		this.itemDeleted = true;
+	}
+
+    editItemData(dataToEdit)
+    {
+		// TODO edge case that name/description are empty string default
+		//   by ignores that input and doesn't change a thing
+		// TODO edge case that price/prepTime 0 is NOT HANDLED
+		// TODO handle the 3 bools
+
+        if(dataToEdit.itemName)
         {
-            this.itemName = json.itemName;
+            this.itemName = dataToEdit.itemName;
         }
-        if(json.itemDescription)
+        if(dataToEdit.itemDescription)
         {
-            this.itemDescription = json.itemDescription;
+            this.itemDescription = dataToEdit.itemDescription;
         }
-        if(json.itemPrice)
+        if(dataToEdit.itemPrice)
         {
-            this.itemPrice = json.itemPrice;
+            this.itemPrice = dataToEdit.itemPrice;
         }
-        if(json.itemPrepTime)
+        if(dataToEdit.itemPrepTime)
         {
-            this.itemPrepTime = json.itemPrepTime;
+            this.itemPrepTime = dataToEdit.itemPrepTime;
         }
+		if(dataToEdit.itemIngredientsAdded)
+        {
+            dataToEdit.itemIngredientsAdded.forEach(ingredientAdded => {
+				this.addItemIngredient(ingredientAdded)
+			});
+        }
+		if(dataToEdit.itemIngredientsRemoved)
+        {
+            tdataToEdit.itemIngredientsRemoved.forEach(ingredientRemoved => {
+				this.deleteItemIngredient(ingredientRemoved)
+			});
+        }
+		if(dataToEdit.itemImagesAdded)
+        {
+			dataToEdit.itemImagesAdded.forEach(imageAdded => {
+				this.addItemImage(imageAdded)
+			});
+        }
+		if(dataToEdit.itemImagesRemoved)
+        {
+			dataToEdit.itemImagesRemoved.forEach(imageRemoved => {
+				this.deleteItemImage(imageRemoved)
+			});
+        }
+		// Availability, popularity and deleted cannot be handled here because they are boolean
     }
 }
-function addItem(name, desc, price, prepTime, images, ingredients, avail, popu)
-{
-    return new Item(name,desc,price,prepTime,images,ingredients,avail,popu);
-}
-function deleteItem(item)
-{
-    item.itemDeleted = true;
-}
+
+export { Item };
